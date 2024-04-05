@@ -1,5 +1,5 @@
-from generated.PJP_LanguageVisitor import PJP_LanguageVisitor
-from generated.PJP_LanguageParser import PJP_LanguageParser
+from generated_src.PJP_LanguageVisitor import PJP_LanguageVisitor
+from generated_src.PJP_LanguageParser import PJP_LanguageParser
 
 
 class TypeCheckVisitor(PJP_LanguageVisitor):
