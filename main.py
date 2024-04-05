@@ -1,8 +1,7 @@
 import sys
 from antlr4 import *
-from PJP_LanguageVisitor import PJP_LanguageVisitor
-from PJP_LanguageParser import PJP_LanguageParser
-from PJP_LanguageLexer import PJP_LanguageLexer
+from generated.PJP_LanguageParser import PJP_LanguageParser
+from generated.PJP_LanguageLexer import PJP_LanguageLexer
 
 
 
@@ -13,7 +12,6 @@ def main(argv):
     parser = PJP_LanguageParser(stream)
 
     tree = parser.program()
-
 
     print(tree.toStringTree(recog=parser))
 
