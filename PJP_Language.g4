@@ -15,22 +15,28 @@ statement
     | emptyStatement
     ;
 
-blockOfStatements : '{' statement (statement)* '}';
+blockOfStatements
+    : '{' statement (statement)* '}';
 declaration
     : primitiveType IDENTIFIER ( COMMA IDENTIFIER)* SEMI
     | primitiveType IDENTIFIER '=' expr ( COMMA IDENTIFIER '=' expr)* SEMI;
-ifElse : IF '(' expr ')' pos=statement (ELSE neg=statement)?;
-while : WHILE '(' expr ')' statement;
+ifElse
+    : IF '(' expr ')' pos=statement (ELSE neg=statement)?;
+while
+    : WHILE '(' expr ')' statement;
 for
     : FOR '(' declaration expr SEMI expr ')' statement
     | FOR '(' expr SEMI expr SEMI expr ')' statement;
-
-doWhile : DO statement WHILE '(' expr ')' SEMI;
-
-readStatement : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
-writeStatement : WRITE expr ( COMMA expr)* SEMI;
-printExpr : expr SEMI;
-emptyStatement : SEMI;
+doWhile
+    : DO statement WHILE '(' expr ')' SEMI;
+readStatement
+    : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
+writeStatement
+    : WRITE expr ( COMMA expr)* SEMI;
+printExpr
+    : expr SEMI;
+emptyStatement
+    : SEMI;
 
 
 expr: IDENTIFIER                            # id            
