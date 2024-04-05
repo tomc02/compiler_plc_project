@@ -55,3 +55,25 @@ c = "";
 e = true;
 read a,b,c,e;
 write "a,b,c,e: ", a, ",", b, ",", c, ",",e;
+
+write "for loop";
+for (int i=0; i<10; i=1+i)
+{
+    write "i: ", i;
+}
+
+write "while loop";
+int i=0;
+while (i<10)
+{
+    write "i: ", i;
+    i=1+i;
+}
+
+write "do-while loop";
+int i=0;
+do
+{
+    write "i: ", i;
+    i=1+i;
+} while (i<10);

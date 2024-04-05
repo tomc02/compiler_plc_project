@@ -14,6 +14,11 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJP_LanguageParser#statement.
+    def visitStatement(self, ctx:PJP_LanguageParser.StatementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJP_LanguageParser#blockOfStatements.
     def visitBlockOfStatements(self, ctx:PJP_LanguageParser.BlockOfStatementsContext):
         return self.visitChildren(ctx)
@@ -31,6 +36,16 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by PJP_LanguageParser#while.
     def visitWhile(self, ctx:PJP_LanguageParser.WhileContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJP_LanguageParser#for.
+    def visitFor(self, ctx:PJP_LanguageParser.ForContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJP_LanguageParser#doWhile.
+    def visitDoWhile(self, ctx:PJP_LanguageParser.DoWhileContext):
         return self.visitChildren(ctx)
 
 

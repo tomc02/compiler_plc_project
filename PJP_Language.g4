@@ -3,16 +3,34 @@ grammar PJP_Language;
 program: statement+ EOF ;
 
 statement
-    : '{' statement (statement)* '}'                  # blockOfStatements     
-    | primitiveType IDENTIFIER ( COMMA IDENTIFIER)* SEMI    # declaration           
-    | IF '(' expr ')' pos=statement (ELSE neg=statement)?   # ifElse                
-    | WHILE '(' expr ')' statement                          # while                 
-    | READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI             # readStatement         
-    | WRITE expr ( COMMA expr)* SEMI                        # writeStatement        
-    | expr SEMI                                             # printExpr             
-    | SEMI                                                  # emptyStatement        
+    : blockOfStatements
+    | declaration
+    | ifElse
+    | while
+    | for
+    | doWhile
+    | readStatement
+    | writeStatement
+    | printExpr
+    | emptyStatement
     ;
 
+blockOfStatements : '{' statement (statement)* '}';
+declaration
+    : primitiveType IDENTIFIER ( COMMA IDENTIFIER)* SEMI
+    | primitiveType IDENTIFIER '=' expr ( COMMA IDENTIFIER '=' expr)* SEMI;
+ifElse : IF '(' expr ')' pos=statement (ELSE neg=statement)?;
+while : WHILE '(' expr ')' statement;
+for
+    : FOR '(' declaration expr SEMI expr ')' statement
+    | FOR '(' expr SEMI expr SEMI expr ')' statement;
+
+doWhile : DO statement WHILE '(' expr ')' SEMI;
+
+readStatement : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
+writeStatement : WRITE expr ( COMMA expr)* SEMI;
+printExpr : expr SEMI;
+emptyStatement : SEMI;
 
 
 expr: IDENTIFIER                            # id            
@@ -68,6 +86,8 @@ WRITE : 'write' ;
 IF : 'if' ;
 ELSE : 'else' ;
 WHILE : 'while' ;
+DO : 'do' ;
+FOR : 'for' ;
 
 IDENTIFIER : [a-zA-Z] ([a-zA-Z0-9]*)? ;
 

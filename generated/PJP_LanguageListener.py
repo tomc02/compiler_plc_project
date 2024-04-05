@@ -17,6 +17,15 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJP_LanguageParser#statement.
+    def enterStatement(self, ctx:PJP_LanguageParser.StatementContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#statement.
+    def exitStatement(self, ctx:PJP_LanguageParser.StatementContext):
+        pass
+
+
     # Enter a parse tree produced by PJP_LanguageParser#blockOfStatements.
     def enterBlockOfStatements(self, ctx:PJP_LanguageParser.BlockOfStatementsContext):
         pass
@@ -50,6 +59,24 @@ class PJP_LanguageListener(ParseTreeListener):
 
     # Exit a parse tree produced by PJP_LanguageParser#while.
     def exitWhile(self, ctx:PJP_LanguageParser.WhileContext):
+        pass
+
+
+    # Enter a parse tree produced by PJP_LanguageParser#for.
+    def enterFor(self, ctx:PJP_LanguageParser.ForContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#for.
+    def exitFor(self, ctx:PJP_LanguageParser.ForContext):
+        pass
+
+
+    # Enter a parse tree produced by PJP_LanguageParser#doWhile.
+    def enterDoWhile(self, ctx:PJP_LanguageParser.DoWhileContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#doWhile.
+    def exitDoWhile(self, ctx:PJP_LanguageParser.DoWhileContext):
         pass
 
 
