@@ -97,7 +97,7 @@ for
 doWhile
 readStatement
 writeStatement
-printExpr
+showExpr
 emptyStatement
 expr
 primitiveType

@@ -121,14 +121,14 @@ class PJP_LanguageParser ( Parser ):
     RULE_doWhile = 7
     RULE_readStatement = 8
     RULE_writeStatement = 9
-    RULE_printExpr = 10
+    RULE_showExpr = 10
     RULE_emptyStatement = 11
     RULE_expr = 12
     RULE_primitiveType = 13
 
     ruleNames =  [ "program", "statement", "blockOfStatements", "declaration", 
                    "ifElse", "while", "for", "doWhile", "readStatement", 
-                   "writeStatement", "printExpr", "emptyStatement", "expr", 
+                   "writeStatement", "showExpr", "emptyStatement", "expr", 
                    "primitiveType" ]
 
     EOF = Token.EOF
@@ -289,8 +289,8 @@ class PJP_LanguageParser ( Parser ):
             return self.getTypedRuleContext(PJP_LanguageParser.WriteStatementContext,0)
 
 
-        def printExpr(self):
-            return self.getTypedRuleContext(PJP_LanguageParser.PrintExprContext,0)
+        def showExpr(self):
+            return self.getTypedRuleContext(PJP_LanguageParser.ShowExprContext,0)
 
 
         def emptyStatement(self):
@@ -368,7 +368,7 @@ class PJP_LanguageParser ( Parser ):
             elif token in [4, 6, 7, 19, 22, 34, 35, 36, 38]:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 43
-                self.printExpr()
+                self.showExpr()
                 pass
             elif token in [12]:
                 self.enterOuterAlt(localctx, 10)
@@ -1064,7 +1064,7 @@ class PJP_LanguageParser ( Parser ):
         return localctx
 
 
-    class PrintExprContext(ParserRuleContext):
+    class ShowExprContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1079,29 +1079,29 @@ class PJP_LanguageParser ( Parser ):
             return self.getToken(PJP_LanguageParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return PJP_LanguageParser.RULE_printExpr
+            return PJP_LanguageParser.RULE_showExpr
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrintExpr" ):
-                listener.enterPrintExpr(self)
+            if hasattr( listener, "enterShowExpr" ):
+                listener.enterShowExpr(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrintExpr" ):
-                listener.exitPrintExpr(self)
+            if hasattr( listener, "exitShowExpr" ):
+                listener.exitShowExpr(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPrintExpr" ):
-                return visitor.visitPrintExpr(self)
+            if hasattr( visitor, "visitShowExpr" ):
+                return visitor.visitShowExpr(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def printExpr(self):
+    def showExpr(self):
 
-        localctx = PJP_LanguageParser.PrintExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_printExpr)
+        localctx = PJP_LanguageParser.ShowExprContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 20, self.RULE_showExpr)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 151

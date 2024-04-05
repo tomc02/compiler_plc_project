@@ -59,8 +59,8 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by PJP_LanguageParser#printExpr.
-    def visitPrintExpr(self, ctx:PJP_LanguageParser.PrintExprContext):
+    # Visit a parse tree produced by PJP_LanguageParser#showExpr.
+    def visitShowExpr(self, ctx:PJP_LanguageParser.ShowExprContext):
         return self.visitChildren(ctx)
 
 

@@ -98,12 +98,12 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PJP_LanguageParser#printExpr.
-    def enterPrintExpr(self, ctx:PJP_LanguageParser.PrintExprContext):
+    # Enter a parse tree produced by PJP_LanguageParser#showExpr.
+    def enterShowExpr(self, ctx:PJP_LanguageParser.ShowExprContext):
         pass
 
-    # Exit a parse tree produced by PJP_LanguageParser#printExpr.
-    def exitPrintExpr(self, ctx:PJP_LanguageParser.PrintExprContext):
+    # Exit a parse tree produced by PJP_LanguageParser#showExpr.
+    def exitShowExpr(self, ctx:PJP_LanguageParser.ShowExprContext):
         pass
 
 

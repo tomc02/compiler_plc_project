@@ -11,7 +11,7 @@ statement
     | doWhile
     | readStatement
     | writeStatement
-    | printExpr
+    | showExpr
     | emptyStatement
     ;
 
@@ -33,7 +33,7 @@ readStatement
     : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
 writeStatement
     : WRITE expr ( COMMA expr)* SEMI;
-printExpr
+showExpr
     : expr SEMI;
 emptyStatement
     : SEMI;
