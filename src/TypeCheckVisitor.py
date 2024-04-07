@@ -5,6 +5,7 @@ from generated_src.PJP_LanguageParser import PJP_LanguageParser
 class TypeCheckVisitor(PJP_LanguageVisitor):
     def __init__(self):
         self.symbolTable = {}
+        self.numberOfTypeErrors = 0
 
     def visitDeclaration(self, ctx: PJP_LanguageParser.DeclarationContext):
         declaredType = ctx.primitiveType().getText()
@@ -32,7 +33,7 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
                 varName = leftCtx.IDENTIFIER().getText()
                 if varName not in self.symbolTable:
                     self.printError(f"Variable '{varName}' not declared.", leftCtx)
-
+                    return None
                 declaredType = self.symbolTable[varName]
                 if declaredType != rightType:
                     # Assign int to float is allowed
@@ -108,6 +109,7 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
         self.printError("Type mismatch in comparison operation.", ctx)
 
     def printError(self, message, ctx=None):
+        self.numberOfTypeErrors += 1
         if ctx is not None:
             line = ctx.start.line
             charPositionInLine = ctx.start.column
@@ -116,3 +118,6 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
             message = f"Error - {message}"
 
         print(message)
+
+    def getNumberOfTypeErrors(self):
+        return self.numberOfTypeErrors

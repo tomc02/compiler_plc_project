@@ -13,8 +13,15 @@ def main(argv):
 
     tree = parser.program()
 
+    if parser.getNumberOfSyntaxErrors() > 0:
+        print("Syntax error(s) found, exiting.")
+        return
     visitor = TypeCheckVisitor()
     visitor.visit(tree)
+
+    if visitor.getNumberOfTypeErrors() > 0:
+        print("Type error(s) found, exiting.")
+        return
 
     print(tree.toStringTree(recog=parser))
 
