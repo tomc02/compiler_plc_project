@@ -3,6 +3,7 @@ from antlr4 import *
 from generated_src.PJP_LanguageParser import PJP_LanguageParser
 from generated_src.PJP_LanguageLexer import PJP_LanguageLexer
 from TypeCheckVisitor import TypeCheckVisitor
+from SemanticVisitor import SemanticVisitor
 
 
 def main(argv):
@@ -15,6 +16,10 @@ def main(argv):
 
     visitor = TypeCheckVisitor()
     visitor.visit(tree)
+
+    semantic_visitor = SemanticVisitor()
+    semantic_visitor.visit(tree)
+    semantic_visitor.printSymbolTable()
 
     print(tree.toStringTree(recog=parser))
 
