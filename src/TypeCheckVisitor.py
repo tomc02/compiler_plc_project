@@ -9,7 +9,6 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
 
     def visitDeclaration(self, ctx: PJP_LanguageParser.DeclarationContext):
         declaredType = ctx.primitiveType().getText()
-        # Check redeclaration
         for varCtx in ctx.IDENTIFIER():
             varName = varCtx.getText()
             if varName in self.symbolTable:
@@ -107,6 +106,29 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
         if leftType == rightType:
             return 'bool'
         self.printError("Type mismatch in comparison operation.", ctx)
+
+    def visitRelation(self, ctx:PJP_LanguageParser.RelationContext):
+        leftType = self.visit(ctx.expr(0))
+        rightType = self.visit(ctx.expr(1))
+        if leftType == rightType:
+            return 'bool'
+        self.printError(f"Type mismatch in relation operation {leftType} and {rightType}.", ctx)
+
+    def visitLogical(self, ctx:PJP_LanguageParser.LogicalContext):
+        leftType = self.visit(ctx.expr(0))
+        rightType = self.visit(ctx.expr(1))
+        if leftType == rightType == 'bool':
+            return 'bool'
+        self.printError(f"Logical operation requires boolean types.", ctx)
+
+    def visitNegation(self, ctx:PJP_LanguageParser.NegationContext):
+        exprType = self.visit(ctx.expr())
+        if exprType == 'bool':
+            return 'bool'
+        self.printError(f"Negation operation requires boolean type.", ctx)
+
+    def visitParenthesis(self, ctx:PJP_LanguageParser.ParenthesisContext):
+        return self.visit(ctx.expr())
 
     def printError(self, message, ctx=None):
         self.numberOfTypeErrors += 1

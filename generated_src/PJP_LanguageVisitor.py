@@ -74,11 +74,6 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by PJP_LanguageParser#parens.
-    def visitParens(self, ctx:PJP_LanguageParser.ParensContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by PJP_LanguageParser#negation.
     def visitNegation(self, ctx:PJP_LanguageParser.NegationContext):
         return self.visitChildren(ctx)
@@ -104,18 +99,23 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by PJP_LanguageParser#logicalAnd.
-    def visitLogicalAnd(self, ctx:PJP_LanguageParser.LogicalAndContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by PJP_LanguageParser#float.
     def visitFloat(self, ctx:PJP_LanguageParser.FloatContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJP_LanguageParser#parenthesis.
+    def visitParenthesis(self, ctx:PJP_LanguageParser.ParenthesisContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJP_LanguageParser#int.
     def visitInt(self, ctx:PJP_LanguageParser.IntContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJP_LanguageParser#logical.
+    def visitLogical(self, ctx:PJP_LanguageParser.LogicalContext):
         return self.visitChildren(ctx)
 
 
@@ -136,11 +136,6 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by PJP_LanguageParser#id.
     def visitId(self, ctx:PJP_LanguageParser.IdContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by PJP_LanguageParser#logicalOr.
-    def visitLogicalOr(self, ctx:PJP_LanguageParser.LogicalOrContext):
         return self.visitChildren(ctx)
 
 

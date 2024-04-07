@@ -41,18 +41,17 @@ emptyStatement
 
 expr: IDENTIFIER                            # id            
     | ('true'|'false')                      # bool          
-    | '(' expr ')'                          # parens        
+    | '(' expr ')'                          # parenthesis
     | INT                                   # int           
     | FLOAT                                 # float         
     | STRING                                # string        
-    | prefix=SUB expr                       # unaryMinus    
+    | prefix=SUB expr                       # unaryMinus
     | prefix=NEG expr                       # negation      
     | expr op=(MUL|DIV|MOD) expr            # mulDivMod     
     | expr op=(ADD|SUB|CON) expr            # addSubCon     
     | expr op=(LES|GRE) expr                # relation      
     | expr op=(EQ|NEQ) expr                 # comparison    
-    | expr AND expr                         # logicalAnd    
-    | expr OR expr                          # logicalOr     
+    | expr op=(AND|OR) expr                 # logical
     | <assoc=right> IDENTIFIER '=' expr     # assignment
     | <assoc=right> expr '=' expr           # assignment
     ;
