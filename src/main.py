@@ -11,7 +11,7 @@ def main(argv):
     stream = CommonTokenStream(lexer)
     parser = PJP_LanguageParser(stream)
 
-    tree = parser.program()
+    tree = parser.start()
 
     if parser.getNumberOfSyntaxErrors() > 0:
         print("Syntax error(s) found, exiting.")

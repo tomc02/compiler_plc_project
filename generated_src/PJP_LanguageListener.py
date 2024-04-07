@@ -8,12 +8,12 @@ else:
 # This class defines a complete listener for a parse tree produced by PJP_LanguageParser.
 class PJP_LanguageListener(ParseTreeListener):
 
-    # Enter a parse tree produced by PJP_LanguageParser#program.
-    def enterProgram(self, ctx:PJP_LanguageParser.ProgramContext):
+    # Enter a parse tree produced by PJP_LanguageParser#start.
+    def enterStart(self, ctx:PJP_LanguageParser.StartContext):
         pass
 
-    # Exit a parse tree produced by PJP_LanguageParser#program.
-    def exitProgram(self, ctx:PJP_LanguageParser.ProgramContext):
+    # Exit a parse tree produced by PJP_LanguageParser#start.
+    def exitStart(self, ctx:PJP_LanguageParser.StartContext):
         pass
 
 

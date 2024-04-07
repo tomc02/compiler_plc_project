@@ -26,7 +26,7 @@ def serializedATN():
         1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,
         5,12,194,8,12,10,12,12,12,197,9,12,1,13,1,13,1,13,1,13,3,13,203,
         8,13,1,13,0,1,24,14,0,2,4,6,8,10,12,14,16,18,20,22,24,26,0,6,1,0,
-        6,7,1,0,15,17,2,0,14,14,18,19,1,0,20,21,1,0,23,24,1,0,25,26,225,
+        6,7,1,0,13,15,2,0,12,12,16,17,1,0,18,19,1,0,21,22,1,0,23,24,225,
         0,29,1,0,0,0,2,45,1,0,0,0,4,47,1,0,0,0,6,83,1,0,0,0,8,85,1,0,0,0,
         10,94,1,0,0,0,12,119,1,0,0,0,14,121,1,0,0,0,16,129,1,0,0,0,18,140,
         1,0,0,0,20,151,1,0,0,0,22,154,1,0,0,0,24,173,1,0,0,0,26,202,1,0,
@@ -39,35 +39,35 @@ def serializedATN():
         45,44,1,0,0,0,46,3,1,0,0,0,47,48,5,1,0,0,48,52,3,2,1,0,49,51,3,2,
         1,0,50,49,1,0,0,0,51,54,1,0,0,0,52,50,1,0,0,0,52,53,1,0,0,0,53,55,
         1,0,0,0,54,52,1,0,0,0,55,56,5,2,0,0,56,5,1,0,0,0,57,58,3,26,13,0,
-        58,63,5,34,0,0,59,60,5,13,0,0,60,62,5,34,0,0,61,59,1,0,0,0,62,65,
+        58,63,5,38,0,0,59,60,5,26,0,0,60,62,5,38,0,0,61,59,1,0,0,0,62,65,
         1,0,0,0,63,61,1,0,0,0,63,64,1,0,0,0,64,66,1,0,0,0,65,63,1,0,0,0,
-        66,67,5,12,0,0,67,84,1,0,0,0,68,69,3,26,13,0,69,70,5,34,0,0,70,71,
-        5,3,0,0,71,78,3,24,12,0,72,73,5,13,0,0,73,74,5,34,0,0,74,75,5,3,
+        66,67,5,25,0,0,67,84,1,0,0,0,68,69,3,26,13,0,69,70,5,38,0,0,70,71,
+        5,3,0,0,71,78,3,24,12,0,72,73,5,26,0,0,73,74,5,38,0,0,74,75,5,3,
         0,0,75,77,3,24,12,0,76,72,1,0,0,0,77,80,1,0,0,0,78,76,1,0,0,0,78,
-        79,1,0,0,0,79,81,1,0,0,0,80,78,1,0,0,0,81,82,5,12,0,0,82,84,1,0,
+        79,1,0,0,0,79,81,1,0,0,0,80,78,1,0,0,0,81,82,5,25,0,0,82,84,1,0,
         0,0,83,57,1,0,0,0,83,68,1,0,0,0,84,7,1,0,0,0,85,86,5,29,0,0,86,87,
         5,4,0,0,87,88,3,24,12,0,88,89,5,5,0,0,89,92,3,2,1,0,90,91,5,30,0,
         0,91,93,3,2,1,0,92,90,1,0,0,0,92,93,1,0,0,0,93,9,1,0,0,0,94,95,5,
         31,0,0,95,96,5,4,0,0,96,97,3,24,12,0,97,98,5,5,0,0,98,99,3,2,1,0,
         99,11,1,0,0,0,100,101,5,33,0,0,101,102,5,4,0,0,102,103,3,6,3,0,103,
-        104,3,24,12,0,104,105,5,12,0,0,105,106,3,24,12,0,106,107,5,5,0,0,
+        104,3,24,12,0,104,105,5,25,0,0,105,106,3,24,12,0,106,107,5,5,0,0,
         107,108,3,2,1,0,108,120,1,0,0,0,109,110,5,33,0,0,110,111,5,4,0,0,
-        111,112,3,24,12,0,112,113,5,12,0,0,113,114,3,24,12,0,114,115,5,12,
+        111,112,3,24,12,0,112,113,5,25,0,0,113,114,3,24,12,0,114,115,5,25,
         0,0,115,116,3,24,12,0,116,117,5,5,0,0,117,118,3,2,1,0,118,120,1,
         0,0,0,119,100,1,0,0,0,119,109,1,0,0,0,120,13,1,0,0,0,121,122,5,32,
         0,0,122,123,3,2,1,0,123,124,5,31,0,0,124,125,5,4,0,0,125,126,3,24,
-        12,0,126,127,5,5,0,0,127,128,5,12,0,0,128,15,1,0,0,0,129,130,5,27,
-        0,0,130,135,5,34,0,0,131,132,5,13,0,0,132,134,5,34,0,0,133,131,1,
+        12,0,126,127,5,5,0,0,127,128,5,25,0,0,128,15,1,0,0,0,129,130,5,27,
+        0,0,130,135,5,38,0,0,131,132,5,26,0,0,132,134,5,38,0,0,133,131,1,
         0,0,0,134,137,1,0,0,0,135,133,1,0,0,0,135,136,1,0,0,0,136,138,1,
-        0,0,0,137,135,1,0,0,0,138,139,5,12,0,0,139,17,1,0,0,0,140,141,5,
-        28,0,0,141,146,3,24,12,0,142,143,5,13,0,0,143,145,3,24,12,0,144,
+        0,0,0,137,135,1,0,0,0,138,139,5,25,0,0,139,17,1,0,0,0,140,141,5,
+        28,0,0,141,146,3,24,12,0,142,143,5,26,0,0,143,145,3,24,12,0,144,
         142,1,0,0,0,145,148,1,0,0,0,146,144,1,0,0,0,146,147,1,0,0,0,147,
-        149,1,0,0,0,148,146,1,0,0,0,149,150,5,12,0,0,150,19,1,0,0,0,151,
-        152,3,24,12,0,152,153,5,12,0,0,153,21,1,0,0,0,154,155,5,12,0,0,155,
-        23,1,0,0,0,156,157,6,12,-1,0,157,174,5,34,0,0,158,174,7,0,0,0,159,
+        149,1,0,0,0,148,146,1,0,0,0,149,150,5,25,0,0,150,19,1,0,0,0,151,
+        152,3,24,12,0,152,153,5,25,0,0,153,21,1,0,0,0,154,155,5,25,0,0,155,
+        23,1,0,0,0,156,157,6,12,-1,0,157,174,5,38,0,0,158,174,7,0,0,0,159,
         160,5,4,0,0,160,161,3,24,12,0,161,162,5,5,0,0,162,174,1,0,0,0,163,
-        174,5,36,0,0,164,174,5,35,0,0,165,174,5,38,0,0,166,167,5,19,0,0,
-        167,174,3,24,12,9,168,169,5,22,0,0,169,174,3,24,12,8,170,171,5,34,
+        174,5,34,0,0,164,174,5,35,0,0,165,174,5,36,0,0,166,167,5,17,0,0,
+        167,174,3,24,12,9,168,169,5,20,0,0,169,174,3,24,12,8,170,171,5,38,
         0,0,171,172,5,3,0,0,172,174,3,24,12,2,173,156,1,0,0,0,173,158,1,
         0,0,0,173,159,1,0,0,0,173,163,1,0,0,0,173,164,1,0,0,0,173,165,1,
         0,0,0,173,166,1,0,0,0,173,168,1,0,0,0,173,170,1,0,0,0,174,195,1,
@@ -96,21 +96,21 @@ class PJP_LanguageParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'{'", "'}'", "'='", "'('", "')'", "'true'", 
                      "'false'", "'int'", "'float'", "'string'", "'bool'", 
-                     "';'", "','", "'.'", "'*'", "'/'", "'%'", "'+'", "'-'", 
-                     "'<'", "'>'", "'!'", "'=='", "'!='", "'&&'", "'||'", 
+                     "'.'", "'*'", "'/'", "'%'", "'+'", "'-'", "'<'", "'>'", 
+                     "'!'", "'=='", "'!='", "'&&'", "'||'", "';'", "','", 
                      "'read'", "'write'", "'if'", "'else'", "'while'", "'do'", 
                      "'for'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "INT_KEYWORD", "FLOAT_KEYWORD", "STRING_KEYWORD", 
-                      "BOOL_KEYWORD", "SEMI", "COMMA", "CON", "MUL", "DIV", 
-                      "MOD", "ADD", "SUB", "LES", "GRE", "NEG", "EQ", "NEQ", 
-                      "AND", "OR", "READ", "WRITE", "IF", "ELSE", "WHILE", 
-                      "DO", "FOR", "IDENTIFIER", "FLOAT", "INT", "BOOL", 
-                      "STRING", "WS", "COMMENT", "LINE_COMMENT" ]
+                      "BOOL_KEYWORD", "CON", "MUL", "DIV", "MOD", "ADD", 
+                      "SUB", "LES", "GRE", "NEG", "EQ", "NEQ", "AND", "OR", 
+                      "SEMI", "COMMA", "READ", "WRITE", "IF", "ELSE", "WHILE", 
+                      "DO", "FOR", "INT", "FLOAT", "STRING", "BOOL", "IDENTIFIER", 
+                      "EMPTY_SYMBOLS", "COMMENT", "LINE_COMMENT" ]
 
-    RULE_program = 0
+    RULE_start = 0
     RULE_statement = 1
     RULE_blockOfStatements = 2
     RULE_declaration = 3
@@ -125,7 +125,7 @@ class PJP_LanguageParser ( Parser ):
     RULE_expr = 12
     RULE_primitiveType = 13
 
-    ruleNames =  [ "program", "statement", "blockOfStatements", "declaration", 
+    ruleNames =  [ "start", "statement", "blockOfStatements", "declaration", 
                    "ifElse", "while", "for", "doWhile", "readStatement", 
                    "writeStatement", "showExpr", "emptyStatement", "expr", 
                    "primitiveType" ]
@@ -142,21 +142,21 @@ class PJP_LanguageParser ( Parser ):
     FLOAT_KEYWORD=9
     STRING_KEYWORD=10
     BOOL_KEYWORD=11
-    SEMI=12
-    COMMA=13
-    CON=14
-    MUL=15
-    DIV=16
-    MOD=17
-    ADD=18
-    SUB=19
-    LES=20
-    GRE=21
-    NEG=22
-    EQ=23
-    NEQ=24
-    AND=25
-    OR=26
+    CON=12
+    MUL=13
+    DIV=14
+    MOD=15
+    ADD=16
+    SUB=17
+    LES=18
+    GRE=19
+    NEG=20
+    EQ=21
+    NEQ=22
+    AND=23
+    OR=24
+    SEMI=25
+    COMMA=26
     READ=27
     WRITE=28
     IF=29
@@ -164,12 +164,12 @@ class PJP_LanguageParser ( Parser ):
     WHILE=31
     DO=32
     FOR=33
-    IDENTIFIER=34
+    INT=34
     FLOAT=35
-    INT=36
+    STRING=36
     BOOL=37
-    STRING=38
-    WS=39
+    IDENTIFIER=38
+    EMPTY_SYMBOLS=39
     COMMENT=40
     LINE_COMMENT=41
 
@@ -182,7 +182,7 @@ class PJP_LanguageParser ( Parser ):
 
 
 
-    class ProgramContext(ParserRuleContext):
+    class StartContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -200,29 +200,29 @@ class PJP_LanguageParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return PJP_LanguageParser.RULE_program
+            return PJP_LanguageParser.RULE_start
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProgram" ):
-                listener.enterProgram(self)
+            if hasattr( listener, "enterStart" ):
+                listener.enterStart(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProgram" ):
-                listener.exitProgram(self)
+            if hasattr( listener, "exitStart" ):
+                listener.exitStart(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitProgram" ):
-                return visitor.visitProgram(self)
+            if hasattr( visitor, "visitStart" ):
+                return visitor.visitStart(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def program(self):
+    def start(self):
 
-        localctx = PJP_LanguageParser.ProgramContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 0, self.RULE_program)
+        localctx = PJP_LanguageParser.StartContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 0, self.RULE_start)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
@@ -235,7 +235,7 @@ class PJP_LanguageParser ( Parser ):
                 self.state = 31 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 411113627602) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 411143638994) != 0)):
                     break
 
             self.state = 33
@@ -364,12 +364,12 @@ class PJP_LanguageParser ( Parser ):
                 self.state = 42
                 self.writeStatement()
                 pass
-            elif token in [4, 6, 7, 19, 22, 34, 35, 36, 38]:
+            elif token in [4, 6, 7, 17, 20, 34, 35, 36, 38]:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 43
                 self.showExpr()
                 pass
-            elif token in [12]:
+            elif token in [25]:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 44
                 self.emptyStatement()
@@ -434,7 +434,7 @@ class PJP_LanguageParser ( Parser ):
             self.state = 52
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 411113627602) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 411143638994) != 0):
                 self.state = 49
                 self.statement()
                 self.state = 54
@@ -523,7 +523,7 @@ class PJP_LanguageParser ( Parser ):
                 self.state = 63
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==13:
+                while _la==26:
                     self.state = 59
                     self.match(PJP_LanguageParser.COMMA)
                     self.state = 60
@@ -549,7 +549,7 @@ class PJP_LanguageParser ( Parser ):
                 self.state = 78
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==13:
+                while _la==26:
                     self.state = 72
                     self.match(PJP_LanguageParser.COMMA)
                     self.state = 73
@@ -963,7 +963,7 @@ class PJP_LanguageParser ( Parser ):
             self.state = 135
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==13:
+            while _la==26:
                 self.state = 131
                 self.match(PJP_LanguageParser.COMMA)
                 self.state = 132
@@ -1043,7 +1043,7 @@ class PJP_LanguageParser ( Parser ):
             self.state = 146
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==13:
+            while _la==26:
                 self.state = 142
                 self.match(PJP_LanguageParser.COMMA)
                 self.state = 143
@@ -1704,7 +1704,7 @@ class PJP_LanguageParser ( Parser ):
                         self.state = 176
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 229376) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 57344) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -1723,7 +1723,7 @@ class PJP_LanguageParser ( Parser ):
                         self.state = 179
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 802816) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 200704) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -1742,7 +1742,7 @@ class PJP_LanguageParser ( Parser ):
                         self.state = 182
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==20 or _la==21):
+                        if not(_la==18 or _la==19):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -1761,7 +1761,7 @@ class PJP_LanguageParser ( Parser ):
                         self.state = 185
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==23 or _la==24):
+                        if not(_la==21 or _la==22):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -1780,7 +1780,7 @@ class PJP_LanguageParser ( Parser ):
                         self.state = 188
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==25 or _la==26):
+                        if not(_la==23 or _la==24):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)

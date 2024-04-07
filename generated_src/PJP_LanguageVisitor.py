@@ -9,8 +9,8 @@ else:
 
 class PJP_LanguageVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by PJP_LanguageParser#program.
-    def visitProgram(self, ctx:PJP_LanguageParser.ProgramContext):
+    # Visit a parse tree produced by PJP_LanguageParser#start.
+    def visitStart(self, ctx:PJP_LanguageParser.StartContext):
         return self.visitChildren(ctx)
 
 

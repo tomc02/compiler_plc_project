@@ -1,6 +1,6 @@
 grammar PJP_Language;
 
-program: statement+ EOF ;
+start : statement+ EOF ;
 
 statement
     : blockOfStatements
@@ -39,7 +39,8 @@ emptyStatement
     : SEMI;
 
 
-expr: IDENTIFIER                            # id            
+expr
+    : IDENTIFIER                            # id
     | ('true'|'false')                      # bool          
     | '(' expr ')'                          # parenthesis
     | INT                                   # int           
@@ -69,9 +70,6 @@ FLOAT_KEYWORD : 'float';
 STRING_KEYWORD : 'string';
 BOOL_KEYWORD : 'bool';
 
-SEMI:               ';';
-COMMA:              ',';
-
 CON : '.' ;
 MUL : '*' ;
 DIV : '/' ;
@@ -85,6 +83,8 @@ EQ  : '==' ;
 NEQ : '!=' ;
 AND : '&&' ;
 OR : '||' ;
+SEMI : ';';
+COMMA : ',';
 
 READ : 'read' ;
 WRITE : 'write' ;
@@ -94,22 +94,18 @@ WHILE : 'while' ;
 DO : 'do' ;
 FOR : 'for' ;
 
+INT : [0-9]+ ;
+FLOAT : [0-9]+'.'[0-9]+ ;
+STRING : '"' (~["\\\r\n] | Sequence)* '"';
+BOOL : ('true'|'false') ;
+
 IDENTIFIER : [a-zA-Z] ([a-zA-Z0-9]*)? ;
 
-// DATA TYPES
-
-FLOAT : [0-9]+'.'[0-9]+ ;
-INT : [0-9]+ ;
-BOOL : ('true'|'false') ;
-STRING : '"' (~["\\\r\n] | EscapeSequence)* '"';
-
-fragment EscapeSequence
+fragment Sequence
     : '\\' [btnfr"'\\]
     | '\\' ([0-3]? [0-7])? [0-7]
     ;
 
-// SKIP
-
-WS : [ \t\r\n]+ -> skip ;
+EMPTY_SYMBOLS : [ \t\r\n]+ -> skip ;
 COMMENT: '/*' .*? '*/' -> skip ;
 LINE_COMMENT: '//' ~[\r\n]* -> skip ;
