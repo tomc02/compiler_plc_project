@@ -24,8 +24,7 @@ ifElse
 while
     : WHILE '(' expr ')' statement;
 for
-    : FOR '(' declaration expr SEMI expr ')' statement
-    | FOR '(' expr SEMI expr SEMI expr ')' statement;
+    : FOR '(' expr SEMI expr SEMI expr ')' statement;
 readStatement
     : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
 writeStatement

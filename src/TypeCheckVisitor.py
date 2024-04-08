@@ -75,6 +75,11 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
         leftType = self.visit(ctx.expr(0))
         rightType = self.visit(ctx.expr(1))
 
+        if ctx.op.type == PJP_LanguageParser.MOD:
+            if leftType == rightType == 'int':
+                return 'int'
+            self.printError(f"Modulus operation requires integer types.", ctx)
+
         if (leftType == 'int' and rightType == 'float') or (leftType == 'float' and rightType == 'int'):
             return 'float'  # Result of operation between int and float is float
         elif leftType == rightType:
@@ -150,13 +155,11 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
         return None
 
     def visitFor(self, ctx:PJP_LanguageParser.ForContext):
-        for i in range(3):
-            if ctx.expr(i) is not None:
-                if i == 1:
-                    conditionType = self.visit(ctx.expr(i))
-                    if conditionType != 'bool':
-                        self.printError(f"For loop condition must be boolean.", ctx)
-                self.visit(ctx.expr(i))
+        conditionExpr = ctx.expr(1)
+        if conditionExpr is not None:
+            conditionType = self.visit(conditionExpr)
+            if conditionType != 'bool':
+                self.printError(f"For loop condition must be boolean.", ctx)
         return None
 
 
