@@ -11,7 +11,7 @@ statement
     | doWhile
     | readStatement
     | writeStatement
-    | showExpr
+    | baseExpr
     | emptyStatement
     ;
 
@@ -33,7 +33,7 @@ readStatement
     : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
 writeStatement
     : WRITE expr ( COMMA expr)* SEMI;
-showExpr
+baseExpr
     : expr SEMI;
 emptyStatement
     : SEMI;
@@ -52,7 +52,8 @@ expr
     | expr op=(ADD|SUB|CON) expr            # addSubCon     
     | expr op=(LES|GRE) expr                # relation      
     | expr op=(EQ|NEQ) expr                 # comparison    
-    | expr op=(AND|OR) expr                 # logical
+    | expr AND expr                         # logicalAnd
+    | expr OR expr                          # logicalOr
     | <assoc=right> IDENTIFIER '=' expr     # assignment
     | <assoc=right> expr '=' expr           # assignment
     ;
@@ -96,16 +97,16 @@ FOR : 'for' ;
 
 INT : [0-9]+ ;
 FLOAT : [0-9]+'.'[0-9]+ ;
-STRING : '"' (~["\\\r\n] | Sequence)* '"';
+STRING : '"' (~["\\\r\n] | EscapeSequence)* '"';
 BOOL : ('true'|'false') ;
 
 IDENTIFIER : [a-zA-Z] ([a-zA-Z0-9]*)? ;
 
-fragment Sequence
+fragment EscapeSequence
     : '\\' [btnfr"'\\]
     | '\\' ([0-3]? [0-7])? [0-7]
     ;
 
-EMPTY_SYMBOLS : [ \t\r\n]+ -> skip ;
+WS : [ \t\r\n]+ -> skip ;
 COMMENT: '/*' .*? '*/' -> skip ;
 LINE_COMMENT: '//' ~[\r\n]* -> skip ;

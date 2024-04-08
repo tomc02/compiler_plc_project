@@ -114,7 +114,14 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
             return 'bool'
         self.printError(f"Type mismatch in relation operation {leftType} and {rightType}.", ctx)
 
-    def visitLogical(self, ctx:PJP_LanguageParser.LogicalContext):
+    def visitLogicalAnd(self, ctx:PJP_LanguageParser.LogicalAndContext):
+        leftType = self.visit(ctx.expr(0))
+        rightType = self.visit(ctx.expr(1))
+        if leftType == rightType == 'bool':
+            return 'bool'
+        self.printError(f"Logical operation requires boolean types.", ctx)
+
+    def visitLogicalOr(self, ctx:PJP_LanguageParser.LogicalOrContext):
         leftType = self.visit(ctx.expr(0))
         rightType = self.visit(ctx.expr(1))
         if leftType == rightType == 'bool':

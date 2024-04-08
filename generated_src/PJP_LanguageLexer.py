@@ -159,7 +159,7 @@ class PJP_LanguageLexer(Lexer):
     STRING = 36
     BOOL = 37
     IDENTIFIER = 38
-    EMPTY_SYMBOLS = 39
+    WS = 39
     COMMENT = 40
     LINE_COMMENT = 41
 
@@ -179,14 +179,14 @@ class PJP_LanguageLexer(Lexer):
             "CON", "MUL", "DIV", "MOD", "ADD", "SUB", "LES", "GRE", "NEG", 
             "EQ", "NEQ", "AND", "OR", "SEMI", "COMMA", "READ", "WRITE", 
             "IF", "ELSE", "WHILE", "DO", "FOR", "INT", "FLOAT", "STRING", 
-            "BOOL", "IDENTIFIER", "EMPTY_SYMBOLS", "COMMENT", "LINE_COMMENT" ]
+            "BOOL", "IDENTIFIER", "WS", "COMMENT", "LINE_COMMENT" ]
 
     ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", 
                   "INT_KEYWORD", "FLOAT_KEYWORD", "STRING_KEYWORD", "BOOL_KEYWORD", 
                   "CON", "MUL", "DIV", "MOD", "ADD", "SUB", "LES", "GRE", 
                   "NEG", "EQ", "NEQ", "AND", "OR", "SEMI", "COMMA", "READ", 
                   "WRITE", "IF", "ELSE", "WHILE", "DO", "FOR", "INT", "FLOAT", 
-                  "STRING", "BOOL", "IDENTIFIER", "Sequence", "EMPTY_SYMBOLS", 
+                  "STRING", "BOOL", "IDENTIFIER", "EscapeSequence", "WS", 
                   "COMMENT", "LINE_COMMENT" ]
 
     grammarFileName = "PJP_Language.g4"

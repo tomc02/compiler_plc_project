@@ -98,12 +98,12 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PJP_LanguageParser#showExpr.
-    def enterShowExpr(self, ctx:PJP_LanguageParser.ShowExprContext):
+    # Enter a parse tree produced by PJP_LanguageParser#baseExpr.
+    def enterBaseExpr(self, ctx:PJP_LanguageParser.BaseExprContext):
         pass
 
-    # Exit a parse tree produced by PJP_LanguageParser#showExpr.
-    def exitShowExpr(self, ctx:PJP_LanguageParser.ShowExprContext):
+    # Exit a parse tree produced by PJP_LanguageParser#baseExpr.
+    def exitBaseExpr(self, ctx:PJP_LanguageParser.BaseExprContext):
         pass
 
 
@@ -170,6 +170,15 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJP_LanguageParser#logicalAnd.
+    def enterLogicalAnd(self, ctx:PJP_LanguageParser.LogicalAndContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#logicalAnd.
+    def exitLogicalAnd(self, ctx:PJP_LanguageParser.LogicalAndContext):
+        pass
+
+
     # Enter a parse tree produced by PJP_LanguageParser#float.
     def enterFloat(self, ctx:PJP_LanguageParser.FloatContext):
         pass
@@ -194,15 +203,6 @@ class PJP_LanguageListener(ParseTreeListener):
 
     # Exit a parse tree produced by PJP_LanguageParser#int.
     def exitInt(self, ctx:PJP_LanguageParser.IntContext):
-        pass
-
-
-    # Enter a parse tree produced by PJP_LanguageParser#logical.
-    def enterLogical(self, ctx:PJP_LanguageParser.LogicalContext):
-        pass
-
-    # Exit a parse tree produced by PJP_LanguageParser#logical.
-    def exitLogical(self, ctx:PJP_LanguageParser.LogicalContext):
         pass
 
 
@@ -239,6 +239,15 @@ class PJP_LanguageListener(ParseTreeListener):
 
     # Exit a parse tree produced by PJP_LanguageParser#id.
     def exitId(self, ctx:PJP_LanguageParser.IdContext):
+        pass
+
+
+    # Enter a parse tree produced by PJP_LanguageParser#logicalOr.
+    def enterLogicalOr(self, ctx:PJP_LanguageParser.LogicalOrContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#logicalOr.
+    def exitLogicalOr(self, ctx:PJP_LanguageParser.LogicalOrContext):
         pass
 
 
