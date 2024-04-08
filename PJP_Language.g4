@@ -8,7 +8,6 @@ statement
     | ifElse
     | while
     | for
-    | doWhile
     | readStatement
     | writeStatement
     | baseExpr
@@ -27,8 +26,6 @@ while
 for
     : FOR '(' declaration expr SEMI expr ')' statement
     | FOR '(' expr SEMI expr SEMI expr ')' statement;
-doWhile
-    : DO statement WHILE '(' expr ')' SEMI;
 readStatement
     : READ IDENTIFIER ( COMMA IDENTIFIER)* SEMI;
 writeStatement

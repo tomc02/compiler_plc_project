@@ -149,6 +149,16 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
             self.printError(f"While loop condition must be boolean.", ctx)
         return None
 
+    def visitFor(self, ctx:PJP_LanguageParser.ForContext):
+        for i in range(3):
+            if ctx.expr(i) is not None:
+                if i == 1:
+                    conditionType = self.visit(ctx.expr(i))
+                    if conditionType != 'bool':
+                        self.printError(f"For loop condition must be boolean.", ctx)
+                self.visit(ctx.expr(i))
+        return None
+
 
     def printError(self, message, ctx=None):
         self.numberOfTypeErrors += 1

@@ -71,15 +71,6 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PJP_LanguageParser#doWhile.
-    def enterDoWhile(self, ctx:PJP_LanguageParser.DoWhileContext):
-        pass
-
-    # Exit a parse tree produced by PJP_LanguageParser#doWhile.
-    def exitDoWhile(self, ctx:PJP_LanguageParser.DoWhileContext):
-        pass
-
-
     # Enter a parse tree produced by PJP_LanguageParser#readStatement.
     def enterReadStatement(self, ctx:PJP_LanguageParser.ReadStatementContext):
         pass

@@ -19,12 +19,14 @@ def main(argv):
 
         if parser.getNumberOfSyntaxErrors() > 0:
             print("Syntax error(s) found, exiting.")
+            print("***************************************************")
             continue
         visitor = TypeCheckVisitor()
         visitor.visit(tree)
 
         if visitor.getNumberOfTypeErrors() > 0:
             print("Type error(s) found, exiting.")
+            print("***************************************************")
             continue
 
         print(tree.toStringTree(recog=parser))
