@@ -137,6 +137,19 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
     def visitParenthesis(self, ctx:PJP_LanguageParser.ParenthesisContext):
         return self.visit(ctx.expr())
 
+    def visitIfElse(self, ctx:PJP_LanguageParser.IfElseContext):
+        conditionType = self.visit(ctx.expr())
+        if conditionType != 'bool':
+            self.printError(f"If statement condition must be boolean.", ctx)
+        return None
+
+    def visitWhile(self, ctx:PJP_LanguageParser.WhileContext):
+        conditionType = self.visit(ctx.expr())
+        if conditionType != 'bool':
+            self.printError(f"While loop condition must be boolean.", ctx)
+        return None
+
+
     def printError(self, message, ctx=None):
         self.numberOfTypeErrors += 1
         if ctx is not None:
