@@ -95,10 +95,10 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
         # Allow int + float, float + int, and same-type arithmetic
         if (leftType == 'int' and rightType == 'float') or (leftType == 'float' and rightType == 'int'):
             return 'float'
-        elif leftType == rightType:
+        elif leftType == rightType and leftType in ['int', 'float']:
             return leftType  # Both ints or both floats
 
-        self.printError(f"Type mismatch in addition/subtraction operation: {leftType}, {rightType}.", ctx)
+        self.printError(f"Type mismatch in add/sub operation: {leftType}, {rightType}.", ctx)
 
     def visitComparison(self, ctx: PJP_LanguageParser.ComparisonContext):
         leftType = self.visit(ctx.expr(0))
@@ -110,7 +110,7 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
     def visitRelation(self, ctx:PJP_LanguageParser.RelationContext):
         leftType = self.visit(ctx.expr(0))
         rightType = self.visit(ctx.expr(1))
-        if leftType == rightType:
+        if leftType == rightType or (leftType in ['int', 'float'] and rightType in ['int', 'float']):
             return 'bool'
         self.printError(f"Type mismatch in relation operation {leftType} and {rightType}.", ctx)
 
