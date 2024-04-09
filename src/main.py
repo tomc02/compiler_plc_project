@@ -11,7 +11,7 @@ def main(argv):
     inputs_dir = "inputs/"
     for input_file in os.listdir(inputs_dir):
         print(f"Processing {input_file}")
-        input_stream = FileStream('inputs/' + 'in_for.txt')
+        input_stream = FileStream('inputs/' + input_file)
         lexer = PJP_LanguageLexer(input_stream)
         stream = CommonTokenStream(lexer)
         parser = PJP_LanguageParser(stream)

@@ -71,6 +71,11 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
             self.printError(f"Variable '{varName}' not declared.", ctx)
         return self.symbolTable[varName]
 
+    def getVarType(self, varName):
+        if varName not in self.symbolTable:
+            self.printError(f"Variable '{varName}' not declared.")
+        return self.symbolTable[varName]
+
     def visitMulDivMod(self, ctx: PJP_LanguageParser.MulDivModContext):
         leftType = self.visit(ctx.expr(0))
         rightType = self.visit(ctx.expr(1))
