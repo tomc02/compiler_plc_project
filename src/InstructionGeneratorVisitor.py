@@ -79,7 +79,10 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         self.visit(ctx.expr(1))
         self.checkIntConversion(ctx)
         varName = ctx.expr(0).getText()
-        self.instructions.append(f"save {varName}")
+        if self.instructions[-1] == "pop":
+            self.instructions[-1] = f"save {varName}"
+        else:
+            self.instructions.append(f"save {varName}")
         self.instructions.append(f"load {varName}")
         if isinstance(ctx.expr(0), PJP_LanguageParser.IdContext):
             self.instructions.append("pop")

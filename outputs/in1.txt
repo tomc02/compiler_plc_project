@@ -115,10 +115,8 @@ save k
 push I 55
 save k
 load k
-pop
 save j
 load j
-pop
 save i
 load i
 pop
