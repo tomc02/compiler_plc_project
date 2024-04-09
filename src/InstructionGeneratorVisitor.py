@@ -51,6 +51,19 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             self.visit(ctx.neg)  # Else-part
         self.instructions.append(f"label {end_label}")
 
+    def visitTernaryIfElse(self, ctx:PJP_LanguageParser.TernaryIfElseContext):
+        end_label = self.new_label()
+        else_label = self.new_label() if ctx.neg else end_label
+
+        self.visit(ctx.expr(0))
+        self.instructions.append(f"fjmp {else_label}")
+        self.visit(ctx.expr(1))
+        self.instructions.append(f"jmp {end_label}")
+        self.instructions.append(f"label {else_label}")
+        self.visit(ctx.expr(2))
+        self.instructions.append(f"label {end_label}")
+
+
     def visitWhile(self, ctx: PJP_LanguageParser.WhileContext):
         start_label = self.new_label()
         end_label = self.new_label()

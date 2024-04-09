@@ -167,6 +167,11 @@ class TypeCheckVisitor(PJP_LanguageVisitor):
                 self.printError(f"For loop condition must be boolean.", ctx)
         return None
 
+    def visitTernaryIfElse(self, ctx:PJP_LanguageParser.TernaryIfElseContext):
+        conditionType = self.visit(ctx.expr(0))
+        if conditionType != 'bool':
+            self.printError(f"Ternary if condition must be boolean.", ctx)
+        return None
 
     def printError(self, message, ctx=None):
         self.numberOfTypeErrors += 1

@@ -53,6 +53,15 @@ class PJP_LanguageListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJP_LanguageParser#ternaryIfElse.
+    def enterTernaryIfElse(self, ctx:PJP_LanguageParser.TernaryIfElseContext):
+        pass
+
+    # Exit a parse tree produced by PJP_LanguageParser#ternaryIfElse.
+    def exitTernaryIfElse(self, ctx:PJP_LanguageParser.TernaryIfElseContext):
+        pass
+
+
     # Enter a parse tree produced by PJP_LanguageParser#while.
     def enterWhile(self, ctx:PJP_LanguageParser.WhileContext):
         pass

@@ -6,6 +6,7 @@ statement
     : blockOfStatements
     | declaration
     | ifElse
+    | ternaryIfElse
     | while
     | for
     | readStatement
@@ -21,6 +22,8 @@ declaration
     | primitiveType IDENTIFIER '=' expr ( COMMA IDENTIFIER '=' expr)* SEMI;
 ifElse
     : IF '(' expr ')' pos=statement (ELSE neg=statement)?;
+ternaryIfElse
+    : expr '?' pos=expr ':' neg=expr;
 while
     : WHILE '(' expr ')' statement;
 for

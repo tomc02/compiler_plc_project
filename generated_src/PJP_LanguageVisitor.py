@@ -34,6 +34,11 @@ class PJP_LanguageVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJP_LanguageParser#ternaryIfElse.
+    def visitTernaryIfElse(self, ctx:PJP_LanguageParser.TernaryIfElseContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJP_LanguageParser#while.
     def visitWhile(self, ctx:PJP_LanguageParser.WhileContext):
         return self.visitChildren(ctx)
