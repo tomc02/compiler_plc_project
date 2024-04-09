@@ -45,9 +45,9 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         self.visit(ctx.expr())  # Condition
         self.instructions.append(f"fjmp {else_label}")
         self.visit(ctx.pos)  # If-part
+        self.instructions.append(f"jmp {end_label}")
+        self.instructions.append(f"label {else_label}")
         if ctx.neg:
-            self.instructions.append(f"jmp {end_label}")
-            self.instructions.append(f"label {else_label}")
             self.visit(ctx.neg)  # Else-part
         self.instructions.append(f"label {end_label}")
 
@@ -102,7 +102,6 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         elif ctx.op.type == PJP_LanguageParser.GRE:
             self.instructions.append("gt")
 
-
     def visitComparison(self, ctx: PJP_LanguageParser.ComparisonContext):
         self.visit(ctx.expr(0))
         self.visit(ctx.expr(1))
@@ -123,7 +122,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         self.visit(ctx.expr(1))
         self.instructions.append("or")
 
-    def visitNegation(self, ctx:PJP_LanguageParser.NegationContext):
+    def visitNegation(self, ctx: PJP_LanguageParser.NegationContext):
         self.visit(ctx.expr())
         self.instructions.append("not")
 
@@ -149,7 +148,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             self.visit(child)
         self.instructions.append("print " + str(count))
 
-    def visitReadStatement(self, ctx:PJP_LanguageParser.ReadStatementContext):
+    def visitReadStatement(self, ctx: PJP_LanguageParser.ReadStatementContext):
         for identifier in ctx.IDENTIFIER():
             identifier_type = self.typeCheckVisitor.getVarType(identifier.getText())
             self.instructions.append(f"read {identifier_type[0].upper()}")
