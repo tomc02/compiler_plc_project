@@ -57,13 +57,13 @@ push S "2+3*5(17): "
 push I 2
 push I 3
 push I 5
-mul
-add
+mul I
+add I
 print 2
 push S "17 / 3(5): "
 push I 17
 push I 3
-div
+div I
 print 2
 push S "17 % 3(2): "
 push I 17
@@ -73,15 +73,15 @@ print 2
 push S "2.5*2.5/6.25(1.0): "
 push F 2.5
 push F 2.5
-mul
+mul F
 push F 6.25
-div
+div F
 print 2
 push S "1.5*3(4.5): "
 push F 1.5
 push I 3
 itof
-mul
+mul F
 print 2
 push S "abc+def (abcdef): "
 push S "abc"

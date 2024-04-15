@@ -1,15 +1,21 @@
-push I 0
-save a
-push I 0
-save b
-push I 0
-save c
-load a 
-load b 
-lt
-fjmp 2
-load b 
-jmp 1
-label 2
-load a 
-label 1
+push I 1
+push I 2
+add I
+pop
+push I 1
+itof
+push F 2.2
+add F
+pop
+push I 1
+push I 2
+push I 3
+mul I
+add I
+pop
+push I 1
+push I 2
+add I
+push I 3
+mul I
+pop

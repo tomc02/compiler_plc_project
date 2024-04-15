@@ -26,6 +26,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
 
     def visitBaseExpr(self, ctx: PJP_LanguageParser.BaseExprContext):
         self.visit(ctx.expr())
+        self.instructions.append("pop")
         #self.instructions.append("print 1")
 
     def visitId(self, ctx: PJP_LanguageParser.IdContext):
@@ -85,16 +86,18 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             self.instructions.append(f"save {varName}")
         self.instructions.append(f"load {varName}")
         if isinstance(ctx.expr(0), PJP_LanguageParser.IdContext):
-            self.instructions.append("pop")
+            #self.instructions.append("pop")
+            pass
 
     def visitAddSubCon(self, ctx: PJP_LanguageParser.AddSubConContext):
         self.visit(ctx.expr(0))
         self.visit(ctx.expr(1))
         self.checkIntConversion(ctx)
+        operation_type = self.getOperationType(ctx.expr(0), ctx.expr(1))
         if ctx.op.type == PJP_LanguageParser.ADD:
-            self.instructions.append("add")
+            self.instructions.append("add " + operation_type)
         elif ctx.op.type == PJP_LanguageParser.SUB:
-            self.instructions.append("sub")
+            self.instructions.append("sub " + operation_type)
         elif ctx.op.type == PJP_LanguageParser.CON:
             self.instructions.append("concat")
 
@@ -102,17 +105,18 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         self.visit(ctx.expr(0))
         self.visit(ctx.expr(1))
         self.checkIntConversion(ctx)
+        operation_type = self.getOperationType(ctx.expr(0), ctx.expr(1))
         if ctx.op.type == PJP_LanguageParser.MUL:
-            self.instructions.append("mul")
+            self.instructions.append("mul " + operation_type)
         elif ctx.op.type == PJP_LanguageParser.DIV:
-            self.instructions.append("div")
+            self.instructions.append("div " + operation_type)
         elif ctx.op.type == PJP_LanguageParser.MOD:
             self.instructions.append("mod")
 
     def visitRelation(self, ctx: PJP_LanguageParser.RelationContext):
         self.visit(ctx.expr(0))
-        self.checkIntConversion(ctx)
         self.visit(ctx.expr(1))
+        self.checkIntConversion(ctx)
         if ctx.op.type == PJP_LanguageParser.LES:
             self.instructions.append("lt")
         elif ctx.op.type == PJP_LanguageParser.GRE:
@@ -170,11 +174,22 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             self.instructions.append(f"read {identifier_type[0].upper()}")
             self.instructions.append(f"save {identifier}")
 
+    def getOperationType(self, first, second):
+        first_type = self.typeCheckVisitor.visit(first)
+        second_type = self.typeCheckVisitor.visit(second)
+        if first_type == 'float' or second_type == 'float':
+            return 'F'
+        return 'I'
+
     def checkIntConversion(self, ctx):
         leftType = self.typeCheckVisitor.visit(ctx.expr(0))
         rightType = self.typeCheckVisitor.visit(ctx.expr(1))
         if leftType != rightType:
-            self.instructions.append("itof")
+            if rightType == 'int':
+                self.instructions.append("itof")
+            else:
+                self.instructions.insert(-1, "itof")
+
 
     def saveInstructions(self, filename):
         with open(filename, 'w') as f:
