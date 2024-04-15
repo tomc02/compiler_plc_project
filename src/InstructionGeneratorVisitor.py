@@ -195,3 +195,6 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
         with open(filename, 'w') as f:
             for instr in self.instructions:
                 f.write(f"{instr}\n")
+
+    def getInstructions(self):
+        return self.instructions

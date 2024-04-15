@@ -5,6 +5,7 @@ from generated_src.PJP_LanguageParser import PJP_LanguageParser
 from generated_src.PJP_LanguageLexer import PJP_LanguageLexer
 from TypeCheckVisitor import TypeCheckVisitor
 from InstructionGeneratorVisitor import InstructionGeneratorVisitor
+from Interpreter import Interpreter
 
 
 def main(argv):
@@ -37,6 +38,16 @@ def main(argv):
         instr_visitor = InstructionGeneratorVisitor(visitor)
         instr_visitor.visit(tree)
         instr_visitor.saveInstructions("outputs/" + input_file)
+        print("Instructions saved to outputs/" + input_file)
+        print("***************************************************")
+
+        with open("outputs/" + input_file, "r") as file:
+            instructions = file.readlines()
+            interpreter = Interpreter()
+            interpreter.load_instructions("outputs/" + input_file)
+            interpreter.load_labels()
+            interpreter.execute()
+
 
 
 
