@@ -1,3 +1,36 @@
+push I 1
+itof
+push I 2
+itof
+push F 3.3
+mul F
+add F
+pop
+push S "1 + 2 = "
+push I 1
+push I 2
+add I
+print 2
+push S "1 + 2.2 = "
+push I 1
+itof
+push F 2.2
+add F
+print 2
+push S "1+2*3 = "
+push I 1
+push I 2
+push I 3
+mul I
+add I
+print 2
+push S "(1+2)*3 = "
+push I 1
+push I 2
+add I
+push I 3
+mul I
+print 2
 push I 3
 push I 4
 lt

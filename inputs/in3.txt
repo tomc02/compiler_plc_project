@@ -1,3 +1,10 @@
+1+2*3.3;
+
+write "1 + 2 = ", 1 + 2;
+write "1 + 2.2 = ", 1 + 2.2;
+write "1+2*3 = ", 1+2*3;
+write "(1+2)*3 = ", (1+2)*3;
+
 if (3<4) write "condition was true";
 else write "condition was false";
 

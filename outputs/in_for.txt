@@ -2,20 +2,28 @@ push I 1
 push I 2
 add I
 pop
+push S "1 + 2 = "
+push I 1
+push I 2
+add I
+print 2
+push S "1 + 2.2 = "
 push I 1
 itof
 push F 2.2
 add F
-pop
+print 2
+push S "1+2*3 = "
 push I 1
 push I 2
 push I 3
 mul I
 add I
-pop
+print 2
+push S "(1+2)*3 = "
 push I 1
 push I 2
 add I
 push I 3
 mul I
-pop
+print 2

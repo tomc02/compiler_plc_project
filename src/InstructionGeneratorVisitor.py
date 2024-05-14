@@ -90,9 +90,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             pass
 
     def visitAddSubCon(self, ctx: PJP_LanguageParser.AddSubConContext):
-        self.visit(ctx.expr(0))
-        self.visit(ctx.expr(1))
-        self.checkIntConversion(ctx)
+        self.checkIntConversionMA(ctx)
         operation_type = self.getOperationType(ctx.expr(0), ctx.expr(1))
         if ctx.op.type == PJP_LanguageParser.ADD:
             self.instructions.append("add " + operation_type)
@@ -102,9 +100,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             self.instructions.append("concat")
 
     def visitMulDivMod(self, ctx: PJP_LanguageParser.MulDivModContext):
-        self.visit(ctx.expr(0))
-        self.visit(ctx.expr(1))
-        self.checkIntConversion(ctx)
+        self.checkIntConversionMA(ctx)
         operation_type = self.getOperationType(ctx.expr(0), ctx.expr(1))
         if ctx.op.type == PJP_LanguageParser.MUL:
             self.instructions.append("mul " + operation_type)
@@ -181,6 +177,16 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
             return 'F'
         return 'I'
 
+    def checkIntConversionMA(self, ctx):
+        leftType = self.typeCheckVisitor.visit(ctx.expr(0))
+        rightType = self.typeCheckVisitor.visit(ctx.expr(1))
+        self.visit(ctx.expr(0))
+        if leftType != rightType:
+            self.instructions.append("itof")
+        self.visit(ctx.expr(1))
+
+
+
     def checkIntConversion(self, ctx):
         leftType = self.typeCheckVisitor.visit(ctx.expr(0))
         rightType = self.typeCheckVisitor.visit(ctx.expr(1))
@@ -189,6 +195,7 @@ class InstructionGeneratorVisitor(PJP_LanguageVisitor):
                 self.instructions.append("itof")
             else:
                 self.instructions.insert(-1, "itof")
+        print(self.instructions)
 
 
     def saveInstructions(self, filename):
